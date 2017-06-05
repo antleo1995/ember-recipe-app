@@ -5,9 +5,6 @@
     <div class="collapse navbar-collapse" id="navigation">
       <ul class="nav navbar-nav">
         {{#if isAuthenticated}}
-        <li>{{#link-to "users"}}Users{{/link-to}}</li>
-        {{/if}}
-        {{#if isAuthenticated}}
         <li>{{#link-to "recipe"}}Recipes{{/link-to}}</li>
         {{/if}}
       </ul>
