@@ -11,9 +11,7 @@ Router.map(function () {
   this.route('sign-in');
   this.route('change-password');
   this.route('users');
-  this.route('recipe', function() {
-    this.route('new');
-  });
+  this.route('recipe', { path:'/recipes/:recipe_id' },function() {});
   this.route('recipes', function() {
     this.route('new');
   });

@@ -1,11 +1,10 @@
 <p>Recipes list</p>
 <ul>
-{{#each model as |recipe|}}
+
 <li>
-  <div {{action 'toggleListDetail'}}>{{recipe.title}}</div>
-    {{recipe-detail recipe=recipe}}
-    {{delete-recipe deleteRecipe='deleteRecipe' recipe=recipe}}
+  <div>{{recipe.title}}</div>
+    {{recipe-detail recipe=model}}
 </li>
-{{/each}}
+
 </ul>
 {{outlet}}

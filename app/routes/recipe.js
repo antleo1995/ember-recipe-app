@@ -26,5 +26,6 @@ export default Ember.Route.extend({
       console.log('Testing deleteRecipe in recipe.js route and recipe', recipe);
       recipe.destroyRecord();
     }
+
  }
 });
