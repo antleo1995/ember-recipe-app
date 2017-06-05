@@ -14,6 +14,9 @@ Router.map(function () {
   this.route('recipe', function() {
     this.route('new');
   });
+  this.route('recipes', function() {
+    this.route('new');
+  });
 });
 
 export default Router;
