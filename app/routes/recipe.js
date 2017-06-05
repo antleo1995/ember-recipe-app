@@ -12,11 +12,16 @@ export default Ember.Route.extend({
   actions: {
     create (recipe) {
       console.log('Test in recipe route and recipe is: ', recipe);
-          return this.get('recipe').create(recipe);
+          this.get('recipe').create(recipe)
+          .then(this.transitionTo('recipe', recipe));
       },
       toggleListDetail () {
         console.log('testing toggleListDetail');
       return this.toggleProperty('listDetailHidden');
     },
+    deleteRecipe(recipe) {
+      console.log('Testing deleteRecipe in recipe.js route and recipe', recipe);
+      recipe.destroyRecord();
+    }
  }
 });
