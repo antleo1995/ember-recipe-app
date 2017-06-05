@@ -1,7 +1,7 @@
 <label for="recipe">Title</label>
 {{recipe-title title=recipe.title}}
 <label for="recipe">Ingredients</label>
-{{recipe-ingredients ingredients=recipe.ingredient_list}}
+{{recipe-ingredients ingredients=recipe.ingredients}}
 <label for="recipe">Directions</label>
 {{recipe-directions directions=recipe.directions}}
-{{#link-to 'recipe.new'}}<button type='submit' {{action 'create'}}>Create</button>{{/link-to}}
+{{#link-to 'recipe'}}<button type='submit' {{action 'updateRecipe' recipe='recipe'}}>Edit</button>{{/link-to}}
