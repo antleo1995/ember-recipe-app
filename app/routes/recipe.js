@@ -14,7 +14,9 @@ export default Ember.Route.extend({
       this.get('store').createRecord('recipe', recipe).save()
       // console.log('Test in recipe route and recipe is: ', recipe);
       //     this.get('recipe').create(recipe)
-      //     .then(this.transitionTo('recipe', recipe));
+      .then(() => {
+        this.transitionTo('recipe', recipe);
+      });
       },
       toggleListDetail () {
         console.log('testing toggleListDetail');
