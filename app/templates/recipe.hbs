@@ -1,7 +1,11 @@
 <p>Recipes list</p>
 <ul>
 {{#each model as |recipe|}}
-  <li>{{recipe.title}}</li>
+<li>
+  <div {{action 'toggleListDetail'}}>{{recipe.title}}</div>
+    {{recipe-detail recipe=recipe}}
+</li>
 {{/each}}
+
 </ul>
 {{outlet}}
