@@ -11,10 +11,13 @@ Router.map(function () {
   this.route('sign-in');
   this.route('change-password');
   this.route('users');
-  this.route('recipe', { path:'/recipes/:recipe_id' },function() {});
+  this.route('recipe', { path:'/recipes/:recipe_id' },function() {
+    this.route('edit');
+  });
   this.route('recipes', function() {
     this.route('new');
   });
+  this.route('recipe-edit', { path: '/recipe/:recipe_id/edit' });
 });
 
 export default Router;
