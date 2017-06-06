@@ -14,8 +14,14 @@ export default Ember.Route.extend({
         console.log('testing recipe save on recipe-edit route and recipe is: ', recipe);
         recipe.save()
         .then(()=>{
-          this.transitionTo('recipes')
-        })
+          this.transitionTo('recipes');
+        });
+      },
+      reset(){
+         this.transitionTo('recipe');
+      },
+      back() {
+        history.back();
       }
  }
 });

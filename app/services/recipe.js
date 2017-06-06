@@ -15,7 +15,7 @@ export default Ember.Service.extend({
       directions: recipe.directions
     }
   }
-    });
-  },
+});
+}
 
 });
