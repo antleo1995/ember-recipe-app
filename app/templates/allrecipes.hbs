@@ -1,13 +1,8 @@
-<p>Your Recipes</p>
+<p>All Recipes</p>
 <ul>
-
 {{#each model as |recipe|}}
-{{#if recipe.editable}}
 <li>
   {{#link-to 'recipe' recipe}}<div>{{recipe.title}}</div>{{/link-to}}
-    {{delete-recipe deleteRecipe='deleteRecipe' recipe=recipe}}
 </li>
-{{/if}}
 {{/each}}
 </ul>
-{{outlet}}

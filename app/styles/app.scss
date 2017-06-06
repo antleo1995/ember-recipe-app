@@ -14,14 +14,13 @@
   height: 60px;
 }
 .background {
-   position: fixed;
    left: 0;
    right: 0;
    z-index: -100;
    display: block;
    background-image: url('https://i.imgur.com/yzg18yP.jpg');
    width: auto;
-   height: 2000px;
+   height: auto;
 }
 .content{
   z-index: 100;
@@ -112,13 +111,14 @@
   font-size: 20px;
   height: auto;
   padding: 20px;
+  position:relative;
   width: 50%;
   z-index: 2;
-  position: relative;
   margin-top: 1%;
   margin-left: 20%;
   margin-right: 20%;
   padding-left: 15px;
+  margin-bottom: 25px;
 }
 #sign-in-div {
   background-image: url('https://i.imgur.com/9jQ7UbI.jpg');
@@ -137,6 +137,7 @@ body {
   font-size: 25px;
   color: black;
   font-family: 'Bree Serif', serif;
+  overflow-y:scroll;
 }
 hr {
   border-top: 1px solid black;

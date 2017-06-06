@@ -1,1 +1,4 @@
+{{#if model.editable}}
 {{#link-to 'recipe.edit'}}<button class='btn btn-primary'>Edit</button>{{/link-to}}
+{{/if}}
+<button class='btn btn-primary' {{action 'back'}}>Back</button>

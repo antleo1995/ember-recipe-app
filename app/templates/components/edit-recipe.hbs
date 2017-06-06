@@ -5,4 +5,5 @@
 {{recipe-ingredients ingredients=recipe.ingredient_list}}
 <label for="recipe">Directions</label>
 {{recipe-directions directions=recipe.directions}}
-{{#link-to 'recipe'}}<button type='submit' class='btn btn-md btn-primary' {{action 'updateRecipe' recipe='recipe'}}>Edit</button>{{/link-to}}
+<button type='submit' class='btn btn-md btn-primary' {{action 'updateRecipe'}}>Submit</button>
+<button type='submit' class='btn btn-md btn-default' {{action 'reset'}}>Cancel</button>
