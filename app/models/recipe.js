@@ -5,5 +5,6 @@ export default DS.Model.extend({
   ingredient_list: DS.attr('string'),
   directions: DS.attr('string'),
   prep_time: DS.attr('string'),
-  editable: DS.attr('boolean')
+  editable: DS.attr('boolean'),
+
 });

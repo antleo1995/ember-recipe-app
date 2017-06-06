@@ -12,11 +12,9 @@ export default Ember.Route.extend({
   actions: {
     create (recipe) {
       this.get('store').createRecord('recipe', recipe).save()
-      // console.log('Test in recipe route and recipe is: ', recipe);
-      // //     this.get('recipe').create(recipe)
           .then(() => {
             this.transitionTo('recipes');
-          });
+          })
        },
       toggleListDetail () {
         console.log('testing toggleListDetail');
@@ -25,6 +23,10 @@ export default Ember.Route.extend({
     deleteRecipe(recipe) {
       console.log('Testing deleteRecipe in recipe.js route and recipe', recipe);
       recipe.destroyRecord();
+    },
+    clear(recipe) {
+      console.log('testing clear');
+      recipe = {};
     }
  }
 });

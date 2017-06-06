@@ -4,4 +4,5 @@
 {{recipe-ingredients ingredients=recipe.ingredient_list}}
 <label for="recipe">Directions</label>
 {{recipe-directions directions=recipe.directions}}
-{{#link-to 'recipes.new'}}<button type='submit' class='btn btn-xs btn-primary' {{action 'create'}}>Create</button>{{/link-to}}
+{{#link-to 'recipes.new'}}<button type='submit' class='btn btn-md btn-primary' {{action 'create'}}>Create</button>{{/link-to}}
+{{#link-to 'recipes'}}<button type='submit' class='btn btn-md btn-default'>Cancel</button>{{/link-to}}
