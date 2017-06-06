@@ -1,5 +1,6 @@
 @import 'bootstrap';
 @import 'bootstrap/theme';
+@import './recipe';
 
 .col {
   min-width: 400px;
@@ -17,16 +18,10 @@
    left: 0;
    right: 0;
    z-index: -100;
-
    display: block;
    background-image: url('https://i.imgur.com/yzg18yP.jpg');
    width: auto;
    height: 2000px;
-   -webkit-filter: blur(10px);
-   -moz-filter: blur(10px);
-   -o-filter: blur(10px);
-   -ms-filter: blur(10px);
-   filter: blur(10px);
 }
 .content{
   z-index: 100;
@@ -64,7 +59,6 @@
   padding: 10px;
 }
 .navbarcustom {
-    background-color:#d1665c;
     color: #5cd185;
     font-size: 15px;
     border-radius:0;
@@ -140,7 +134,7 @@
   margin-right: 20%;
 }
 body {
-  font-size: 40px;
+  font-size: 25px;
   color: black;
   font-family: 'Bree Serif', serif;
 }
