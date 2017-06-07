@@ -1,6 +1,6 @@
 <div class='recipe-list' width='100%'>
   <h1 class='underlined'>{{recipe.title}}</h1>
-  <img class='recipe-image clearfix' height="150px" width="120px" src="https://i.imgur.com/AeUL1Cb.jpg">
+  {{recipe-detail/picture picture=recipe.picture}}
   <h3>Ingredients:<p>{{recipe.ingredient_list}}</p></h3>
   <h3>Directions:<p>{{recipe_list}}</p><br/></h3>
 {{#if recipe.prep_time}}

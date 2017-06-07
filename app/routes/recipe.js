@@ -22,6 +22,11 @@ export default Ember.Route.extend({
       },
       back() {
         history.back();
+      },
+      savePic(picture) {
+        console.log('tesing save pic');
+        let pictureRecord = this.get('store').createRecord('picture', picture);
+        pictureRecord.save();
       }
  }
 });

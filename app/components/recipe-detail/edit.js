@@ -8,6 +8,6 @@ export default Ember.Component.extend({
     }
   },
   reset () {
-    console.log('testing reset in recipe-detail')
+    console.log('testing reset in recipe-detailL')
   }
 });
