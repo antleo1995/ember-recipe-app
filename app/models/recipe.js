@@ -6,5 +6,5 @@ export default DS.Model.extend({
   directions: DS.attr('string'),
   prep_time: DS.attr('string'),
   editable: DS.attr('boolean'),
-  picture: DS.belongsTo('pictures', {async: true})
+  picture: DS.belongsTo('picture', {async: true})
 });

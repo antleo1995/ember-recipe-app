@@ -10,7 +10,7 @@ export default Ember.Route.extend({
     return this.get('store').findRecord('recipe', params.recipe_id);
   },
     actions: {
-      save (recipe) {
+      saveRecipe (recipe) {
         console.log('testing recipe save on recipe-edit route and recipe is: ', recipe);
         recipe.save()
         .then(()=>{

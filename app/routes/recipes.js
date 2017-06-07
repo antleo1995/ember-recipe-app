@@ -11,7 +11,6 @@ export default Ember.Route.extend({
   },
   actions: {
     create (recipe) {
-      recipe.picture = ''
       this.get('store').createRecord('recipe', recipe).save()
           .then(() => {
             this.transitionTo('recipes');
