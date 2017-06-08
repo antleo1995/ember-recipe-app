@@ -13,6 +13,7 @@ Router.map(function () {
   this.route('users');
   this.route('recipe', { path:'/recipes/:recipe_id' },function() {
     this.route('edit');
+    this.route('picture');
   });
   this.route('recipes', function() {
     this.route('new');

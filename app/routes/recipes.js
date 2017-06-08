@@ -11,8 +11,11 @@ export default Ember.Route.extend({
   },
   actions: {
     create (recipe) {
-      console.log('testing create inside recipes model');
-      this.get('store').createRecord('recipe', recipe).save()
+      console.log('testing create inside recipes model and recipe is, ', recipe.title);
+
+      const recipeRec = this.get('store').createRecord('recipe', { title: recipe.title, directions: recipe.directions, ingredient_list: recipe.ingredient_list,
+        prep_time: recipe.prep_time })
+      recipeRec.save()
           .then(() => {
             this.transitionTo('recipes');
           })
@@ -20,11 +23,6 @@ export default Ember.Route.extend({
     toggleListDetail () {
         console.log('testing toggleListDetail');
       return this.toggleProperty('listDetailHidden');
-    },
-    createPic (picture) {
-      console.log('testing createPic');
-      let pictureRecord = this.get('store').createRecord('picture', picture);
-      pictureRecord.save();
     },
     deleteRecipe(recipe) {
       console.log('Testing deleteRecipe in recipe.js route and recipe', recipe);
