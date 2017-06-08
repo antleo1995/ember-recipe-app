@@ -7,6 +7,7 @@ export default Ember.Route.extend({
   // classNameBindings: ['listDetailHidden'],
   // listDetailHidden: false,
   model (params) {
+    // console.log(this.get('store').findRecord('recipe', params.recipe_id))
     return this.get('store').findRecord('recipe', params.recipe_id);
   },
     actions: {
@@ -19,6 +20,9 @@ export default Ember.Route.extend({
       },
       reset(){
          this.transitionTo('recipe');
+      },
+      showConsole (recipe) {
+        console.log(this.get('recipe'))
       },
       back() {
         history.back();

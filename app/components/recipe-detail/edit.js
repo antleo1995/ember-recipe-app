@@ -7,7 +7,8 @@ export default Ember.Component.extend({
       this.sendAction('save', this.get('recipe'))
     }
   },
-  reset () {
-    console.log('testing reset in recipe-detailL')
+  showConsole () {
+    console.log('testing show');
+    this.sendAction('show', this.get('recipe'))
   }
 });

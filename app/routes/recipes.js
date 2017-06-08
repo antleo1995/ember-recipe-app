@@ -7,12 +7,12 @@ export default Ember.Route.extend({
   classNameBindings: ['listDetailHidden'],
   listDetailHidden: false,
   model () {
-    return this.get('store').findAll('recipe');
+        return this.get('store').findAll('recipe');
+
   },
   actions: {
     create (recipe) {
-      console.log('testing create inside recipes model and recipe is, ', recipe.title);
-
+      console.log('testing create inside recipes model and recipe is, ', recipe.title)
       const recipeRec = this.get('store').createRecord('recipe', { title: recipe.title, directions: recipe.directions, ingredient_list: recipe.ingredient_list,
         prep_time: recipe.prep_time })
       recipeRec.save()
