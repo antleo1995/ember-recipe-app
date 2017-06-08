@@ -7,24 +7,30 @@ export default Ember.Route.extend({
   classNameBindings: ['listDetailHidden'],
   listDetailHidden: false,
   model () {
-    return this.get('store').findAll('recipe');
+        return this.get('store').findAll('recipe');
+
   },
   actions: {
     create (recipe) {
-      this.get('store').createRecord('recipe', recipe).save()
-      // console.log('Test in recipe route and recipe is: ', recipe);
-      // //     this.get('recipe').create(recipe)
+      console.log('testing create inside recipes model and recipe is, ', recipe.title)
+      const recipeRec = this.get('store').createRecord('recipe', { title: recipe.title, directions: recipe.directions, ingredient_list: recipe.ingredient_list,
+        prep_time: recipe.prep_time })
+      recipeRec.save()
           .then(() => {
             this.transitionTo('recipes');
-          });
+          })
        },
-      toggleListDetail () {
+    toggleListDetail () {
         console.log('testing toggleListDetail');
       return this.toggleProperty('listDetailHidden');
     },
     deleteRecipe(recipe) {
       console.log('Testing deleteRecipe in recipe.js route and recipe', recipe);
       recipe.destroyRecord();
+    },
+    clear(recipe) {
+      console.log('testing clear');
+      recipe = {};
     }
  }
 });

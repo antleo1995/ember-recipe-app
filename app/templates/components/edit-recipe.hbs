@@ -1,4 +1,7 @@
 <label for="recipe">Title</label>
+{{#each flashMessages.queue as |flash|}}
+  {{flash-message flash=flash}}
+{{/each}}
 {{input value=recipe.title
   placehodler='New Title'}}
 <label for="recipe">Ingredients</label>
@@ -6,4 +9,8 @@
 <label for="recipe">Directions</label>
 {{recipe-directions directions=recipe.directions}}
 <button type='submit' class='btn btn-md btn-primary' {{action 'updateRecipe'}}>Submit</button>
+<hr>
+<label for='recipe'>Picture</label>
+{{picture-input picture=picture.url}}
+<button type='submit' class='btn btn-md btn-primary' {{action 'addPic'}}>Submit</button>
 <button type='submit' class='btn btn-md btn-default' {{action 'reset'}}>Cancel</button>

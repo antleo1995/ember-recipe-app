@@ -8,6 +8,6 @@ export default Ember.Component.extend({
     create () {
       this.sendAction('create', this.get('recipe'));
       console.log("recipe form recipe is: ", this.get('recipe'));
-    }
+    },
   },
 });
