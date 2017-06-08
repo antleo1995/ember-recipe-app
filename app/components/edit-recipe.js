@@ -11,8 +11,9 @@ export default Ember.Component.extend({
       console.log("testing updateRecipe", this.get('recipe'));
     },
     reset() {
-      console.log('testing reset in edit-recipe');
-      this.sendAction('reset', this.get('recipe'));
+      this.set('recipe', null)
+      this.set('picture', null)
+      history.back()
     },
     addPic() {
       console.log('testing addPic');

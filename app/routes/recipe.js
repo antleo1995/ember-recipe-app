@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   // recipe: Ember.inject.service(),
-  // flashMessages: Ember.inject.service(),
+  flashMessages: Ember.inject.service(),
   // classNames: ['recipe'],
   // classNameBindings: ['listDetailHidden'],
   // listDetailHidden: false,
@@ -14,8 +14,13 @@ export default Ember.Route.extend({
       saveRecipe (recipe) {
         console.log('testing recipe save on recipe-edit route and recipe is: ', recipe);
         recipe.save()
-        .then(()=>{
-          this.transitionTo('recipes');
+        .then(() => {
+          this.get('flashMessages')
+          .success('Changes were saved.');
+        })
+        .catch(() => {
+          this.get('flashMessages')
+          .danger('There was a problem. Please try again.');
         });
       },
       reset(){
@@ -28,10 +33,17 @@ export default Ember.Route.extend({
         history.back();
       },
       savePic(picture) {
-        console.log('tesing save pic');
-        let pictureRecord = this.get('store').createRecord('picture', picture);
-        pictureRecord.save();
-        picture = null
-      }
- }
+          let pictureRecord = this.get('store').createRecord('picture', picture);
+          pictureRecord.save()
+          .then(() => {
+            this.get('flashMessages')
+            .success('Picture was saved.');
+          })
+          .catch(() => {
+            this.get('flashMessages')
+            .danger('Picture was not saved! Most likely due to existing picture');
+          })
+          picture = null
+        }
+     }
 });
