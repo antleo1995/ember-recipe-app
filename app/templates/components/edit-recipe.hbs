@@ -5,8 +5,8 @@
 {{recipe-ingredients ingredients=recipe.ingredient_list}}
 <label for="recipe">Directions</label>
 {{recipe-directions directions=recipe.directions}}
-<label for='recipe'>Picture</label>
+{{!-- <label for='recipe'>Picture</label>
 {{picture-input picture=picture.url}}
-<button type='submit' class='btn btn-md btn-primary' {{action 'addPic'}}>Submit</button>
-{{!-- <button type='submit' class='btn btn-md btn-primary' {{action 'updateRecipe'}}>Submit</button> --}}
+<button type='submit' class='btn btn-md btn-primary' {{action 'addPic'}}>Submit</button> --}}
+<button type='submit' class='btn btn-md btn-primary' {{action 'updateRecipe'}}>Submit</button>
 <button type='submit' class='btn btn-md btn-default' {{action 'reset'}}>Cancel</button>

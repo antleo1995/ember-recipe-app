@@ -16,11 +16,11 @@ export default Ember.Component.extend({
     },
     addPic() {
       console.log('testing addPic');
-      let data = this.get('picture');
-      console.log('Data is: ', data);
+      // let data = this.get('picture');
+      // console.log('Recipe on edit-recipe addPic is: ', this.get('recipe'));
       data.recipe = this.get('recipe');
       // data.set('recipe', this.get('recipe'))
-      console.log('Data.recipe is: ', data.recipe);
+      // console.log('Data.recipe is: ', data.recipe);
       this.sendAction('addPic', data);
       this.set('picture.url', null);
     }

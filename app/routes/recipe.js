@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  picture: {
+    url: null
+  },
   // recipe: Ember.inject.service(),
   // flashMessages: Ember.inject.service(),
   // classNames: ['recipe'],
@@ -24,10 +27,10 @@ export default Ember.Route.extend({
         history.back();
       },
       savePic(picture) {
-        console.log('tesing save pic');
-        let pictureRecord = this.get('store').createRecord('picture', picture);
+        console.log('tesing save pic and picture.recipe.id is: ', picture.recipe.id);
+        let pictureRecord = this.get('store').createRecord('picture', { url: picture.url, recipe_id: picture.recipe.id});
         pictureRecord.save();
-        picture = null
+        // picture = null
       }
  }
 });
