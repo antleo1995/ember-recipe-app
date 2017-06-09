@@ -26,19 +26,19 @@ As a user, I would like the ability to search recipes by name.
 
 Starting with project 2, I decided to try and add some features and rebuild as an ember app.
 
-Day 1:
+**Day 1:**
 Initially this seemed easier than I ultimately found it. Findig some struggles with getting each of the CRUD features working.
 Create, delete, and read were easy. Struggling with update a bit. Stopping for some documentation and will try agian.
 
 Stuck big time on update. Ended up working to convert the UI look and feel over from the original project. I didn't make it exact as I think the original site still needed work. But in its base state, the UI was mostly converted.
 
-Day 2:
+**Day 2:**
 Struggled most of the first night trying to get update working. Based on feedback from C.Payne I refactored and got as far as the working edit route, but then found myself still not getting the data to bind. Ultimately, I was missing a model being passed
 in at the very root of everything. From there it was action UP! and make the api call. This got me to the point of having a working recipe site with all the same features as it's previous iteration. Spent a bit trying to decide which feature to build out. Ultimately going with photo upload. Starting with just providing a url as a value manually. This should populate it's own table.
 
 Setting up a 1:1 to make sure I am heading in the right direction to hopefully not lose too much time.
 
-Day 3:
+**Day 3:**
 Today was all about the back end - giggity...
 
 I worked for most of the morning finishing the api code. This involved a controller, some routes, some tables and some praying.
@@ -47,6 +47,15 @@ Got things working pretty quickly, despite having to take down some table and re
 I got all serializer working and found out that creating the record from the front end wasn't working. At first it was just missing data altogether, when I finally figured out where to put the model hook at, I was getting the wrong data. Figured out I needed to be on a different route - recipe, and things were finally working.
 
 Now I just need to tie the forms together or give the upload image url its own route, and bug check bug check bug check.
+
+**Day 4:**
+
+Day 4 was a beast. Found so many bugs on night three. Turns out I had some issues with how my relationshiop was working.
+
+Namely I needed to remove the async true from my ember models. Also, I had the serializer set to pull the id of the recipe instead
+of the ID of the picture. Fixing this broke other things until I got some help from the entire consultant crew - turns out I needed an if statement to handle records without picture IDs to provide. Once I had this fixed pretty much al other bugs were gone.
+
+I handled an issue with multiple photos being uploaded to a single recipe by hiding the input form once there was one. Overall very very proud of what I accomplished
 
 ## Objectives
 
@@ -60,12 +69,23 @@ I had several ideas for capstone before I ultimately decided to re-use this site
 
 I built out my features based on a few user stories as I knew the bulk of my work would be spent in a feature conversion from the original site into ember reusing a prebuilt api.
 
+As a retrospective:
+
+Ember requires tons and tons of planning to execute smoothly. I really should have focused on the page elements and what components and routes were needed before I ever touched the code. Lesson learned. 
+
 ## Specific Hurdles
+
+Adding a feature proved very very difficult. I really should have planned more thoroughly. Ultimately, creating the relationship between the picture and its associate recipe wasn't that hard, just a lot more nuance than I first realized. Once I had it all figured out, it was still doing weird things - this was due to unbeknownst nuance. I feel I have a much much deeper understanding of not just ember but of the relationships needed to do these sorts of actions in the future.
 
 ##
 Known issues:
 
 Having a user upload more than one picture won't fail but the system only reads the first picture in the db. Need to handle this.
+--handled by hiding input form. Will eventually have a feature to either update or remove the picture
+
+Some forms don't clear. Tried everything I could think of in the 11th hour to get this to clear. Seems a refresh is the only way, and may ultimately be a chrome thing and not my code.
+
+Couple typos in my greeting but nothing glaring. Will fix this if time allows.
 
 ## [License](LICENSE)
 
