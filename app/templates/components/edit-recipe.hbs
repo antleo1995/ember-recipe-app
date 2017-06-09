@@ -8,6 +8,8 @@
 {{recipe-ingredients ingredients=recipe.ingredient_list}}
 <label for="recipe">Directions</label>
 {{recipe-directions directions=recipe.directions}}
+<label for="recipe">Prep Time</label>
+{{preptime-input preptime=recipe.prep_time}}
 <button type='submit' class='btn btn-md btn-primary' {{action 'updateRecipe'}}>Submit</button>
 <hr>
 <label for='recipe'>Picture</label>

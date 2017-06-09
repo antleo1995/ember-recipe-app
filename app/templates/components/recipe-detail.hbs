@@ -1,6 +1,8 @@
 <div class='recipe-list' width='100%'>
   <h1 class='underlined'>{{recipe.title}}</h1>
+  {{#if recipe.picture}}
   {{recipe-detail/picture picture=recipe.picture}}
+  {{/if}}
   <h3>Ingredients:<p>{{recipe.ingredient_list}}</p></h3>
   <h3>Directions:<p>{{recipe.directions}}</p><br/></h3>
 {{#if recipe.prep_time}}
