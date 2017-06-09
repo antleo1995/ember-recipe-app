@@ -16,9 +16,14 @@ export default Ember.Route.extend({
       const recipeRec = this.get('store').createRecord('recipe', { title: recipe.title, directions: recipe.directions, ingredient_list: recipe.ingredient_list,
         prep_time: recipe.prep_time })
       recipeRec.save()
-          .then(() => {
-            this.transitionTo('recipes');
-          })
+      .then(() => {
+        this.get('flashMessages')
+        .success('Changes were saved.');
+      })
+      .catch(() => {
+        this.get('flashMessages')
+        .danger('There was a problem. Please try again.');
+      });
        },
     toggleListDetail () {
         console.log('testing toggleListDetail');
