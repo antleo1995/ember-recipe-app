@@ -11,8 +11,10 @@
 <label for="recipe">Prep Time</label>
 {{preptime-input preptime=recipe.prep_time}}
 <button type='submit' class='btn btn-md btn-primary' {{action 'updateRecipe'}}>Submit</button>
+{{#unless recipe.picture}}
 <hr>
 <label for='recipe'>Picture</label>
 {{picture-input picture=picture.url}}
 <button type='submit' class='btn btn-md btn-primary' {{action 'addPic'}}>Submit</button>
+{{/unless}}
 <button type='submit' class='btn btn-md btn-default' {{action 'reset'}}>Cancel</button>
