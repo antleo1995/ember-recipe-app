@@ -18,7 +18,10 @@ export default Ember.Route.extend({
       recipeRec.save()
       .then(() => {
         this.get('flashMessages')
-        .success('Changes were saved.');
+        .success('Recipe was saved.');
+      })
+      .then(() => {
+        this.transitionTo('recipes')
       })
       .catch(() => {
         this.get('flashMessages')
