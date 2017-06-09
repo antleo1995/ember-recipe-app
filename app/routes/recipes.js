@@ -10,6 +10,11 @@ export default Ember.Route.extend({
         return this.get('store').findAll('recipe');
 
   },
+  deactivate: function() {
+    console.log('testing deactivate');
+    // const model = this.controllerFor('recipes').get('model');
+    // model.rollback();
+  },
   actions: {
     create (recipe) {
       console.log('testing create inside recipes model and recipe is, ', recipe.title)
@@ -21,7 +26,11 @@ export default Ember.Route.extend({
         .success('Recipe was saved.');
       })
       .then(() => {
-        this.transitionTo('recipes')
+        // this.set('recipe', {});
+        // recipe = {};
+        // let model = this.controllerFor('recipes').get('model');
+        // model.rollback();
+        this.transitionTo('recipes');
       })
       .catch(() => {
         this.get('flashMessages')
