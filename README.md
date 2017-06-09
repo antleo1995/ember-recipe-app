@@ -71,14 +71,21 @@ I built out my features based on a few user stories as I knew the bulk of my wor
 
 As a retrospective:
 
-Ember requires tons and tons of planning to execute smoothly. I really should have focused on the page elements and what components and routes were needed before I ever touched the code. Lesson learned. 
+Ember requires tons and tons of planning to execute smoothly. I really should have focused on the page elements and what components and routes were needed before I ever touched the code. Lesson learned.
 
 ## Specific Hurdles
 
 Adding a feature proved very very difficult. I really should have planned more thoroughly. Ultimately, creating the relationship between the picture and its associate recipe wasn't that hard, just a lot more nuance than I first realized. Once I had it all figured out, it was still doing weird things - this was due to unbeknownst nuance. I feel I have a much much deeper understanding of not just ember but of the relationships needed to do these sorts of actions in the future.
 
-##
-Known issues:
+## Deployed application
+
+Front end repo: https://github.com/antleo1995/ember-recipe-app
+Back end repo: https://antleo1995.github.io/ember-recipe-app/
+
+Front end deployed: https://antleo1995.github.io/ember-recipe-app/
+Back end deployed: https://recipe-card-backend.herokuapp.com/
+
+## Known issues:
 
 Having a user upload more than one picture won't fail but the system only reads the first picture in the db. Need to handle this.
 --handled by hiding input form. Will eventually have a feature to either update or remove the picture
